@@ -10,6 +10,7 @@ env:
 before_script:
 - cd jdk8
 - version="$(awk -F= '/MAVEN_VERSION=/ {print $2}' Dockerfile | cut -d " " -f 1)"
+- base_version="$(awk -F '[:]' '/FROM/ {print $2}' Dockerfile)"
 script:
 - docker build -t "$IMAGE_NAME" .
 after_script:
@@ -18,9 +19,9 @@ before_deploy:
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
 - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${version}"
-- docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${version}-jdk8"
+- docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${version}-${base_version}"
 deploy:
   provider: script
-  script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}" && docker push "${IMAGE_NAME}:${version}-jdk8"
+  script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}" && docker push "${IMAGE_NAME}:${version}-${base_version}"
   on:
     branch: master
