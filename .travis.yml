@@ -10,7 +10,7 @@ env:
 before_script:
 - cd jdk8
 - version="$(awk -F= '/MAVEN_VERSION=/ {print $2}' Dockerfile | cut -d " " -f 1)"
-- base_version="$(awk -F '[:]' '/FROM/ {print $2}' Dockerfile)"
+- base_version="jdk$(awk -F '[:]' '/FROM/ {print $2}' Dockerfile)"
 script:
 - docker build -t "$IMAGE_NAME" .
 after_script:
