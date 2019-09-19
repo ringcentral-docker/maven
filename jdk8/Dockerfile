@@ -1,11 +1,10 @@
-FROM ringcentral/jdk:8u202-alpine3.8
+FROM ringcentral/jdk:8u202-alpine3.10
 LABEL maintainer="john.lin@ringcentral.com"
 
-ENV MAVEN_VERSION=3.6.1 \
+ENV MAVEN_VERSION=3.6.2 \
     MAVEN_HOME=/usr/share/maven \
     MAVEN_CONFIG="$USER_HOME_DIR/.m2" \
-    MAVEN_BASE_URL=http://mirror.cogentco.com/pub/apache/maven/maven-3
-
+    MAVEN_BASE_URL=https://www-us.apache.org/dist/maven/maven-3
 #==============
 # Install and Setting Maven
 #==============
