@@ -1,10 +1,6 @@
 
 # Maven
 
-## Build Status
-
-[![Build Status](https://travis-ci.org/ringcentral-docker/maven.svg?branch=master)](https://travis-ci.org/ringcentral-docker/maven)
-
 ## Image description
 
 * Base on the latest version of ringCentral/jdk Docker Image : [link](https://hub.docker.com/r/ringcentral/jdk/)
