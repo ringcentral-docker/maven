@@ -34,4 +34,5 @@ docker pull ringcentral/maven:latest
 
 for more detail information please refer this url:
 <https://github.com/ringcentral-docker/maven>
+
 <https://hub.docker.com/r/ringcentral/maven>
