@@ -1,4 +1,4 @@
-name: Build Maven base on JDK 13
+name: Build Maven base on JDK 11
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
     paths:
       # '*' matches any character except '/'
-      - 'jdk13/*'
+      - 'jdk11/*'
       - '.github/workflows/*'
 jobs:
   build:
@@ -22,12 +22,18 @@ jobs:
 
     - name: Build & Push Docker Image
       run: |
-        cd jdk13
+        cd jdk11
         IMAGE_NAME=ringcentral/maven
         VERSION="$(awk -F= '/MAVEN_VERSION=/ {print $2}' Dockerfile | cut -d " " -f 1)"
+        JAVA_VERSION="jdk$(awk -F '[:-]' '/FROM/ {print $2}' Dockerfile)"
         BASE_VERSION="jdk$(awk -F '[:]' '/FROM/ {print $2}' Dockerfile)"
         docker build --tag ${IMAGE_NAME} --file Dockerfile .
         docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:latest"
         docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}"
+        docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}-${JAVA_VERSION}"
         docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}-${BASE_VERSION}"
         docker push "${IMAGE_NAME}:${VERSION}-${BASE_VERSION}"
+        docker push "${IMAGE_NAME}:${VERSION}-${JAVA_VERSION}"
+        docker push "${IMAGE_NAME}:${VERSION}"
+        docker push "${IMAGE_NAME}:latest"
+
