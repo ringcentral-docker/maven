@@ -6,7 +6,9 @@
 * Base on the latest version of ringCentral/jdk Docker Image : [link](https://hub.docker.com/r/ringcentral/jdk/)
 
 base on Oracle JDK 8
+```bash
 docker pull ringcentral/maven:3.6.3-jdk8u202
+```
 
 ```bash
 Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
@@ -17,7 +19,9 @@ OS name: "linux", version: "5.3.0-1031-azure", arch: "amd64", family: "unix"
 ```
 
 base on AdoptOpenJDK 11
+```bash
 docker pull ringcentral/maven:3.6.3-jdk11.0.7
+```
 
 ```bash
 Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
@@ -33,6 +37,7 @@ docker pull ringcentral/maven:latest
 ```
 
 for more detail information please refer this url:
+
 <https://github.com/ringcentral-docker/maven>
 
 <https://hub.docker.com/r/ringcentral/maven>
