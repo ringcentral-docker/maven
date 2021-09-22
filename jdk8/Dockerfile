@@ -1,7 +1,7 @@
-FROM ringcentral/jdk:8u202-alpine3.12
+FROM ringcentral/jdk:8u202-alpine3.14
 LABEL maintainer="john.lin@ringcentral.com"
 
-ENV MAVEN_VERSION=3.6.3 \
+ENV MAVEN_VERSION=3.8.2 \
     MAVEN_HOME=/usr/share/maven \
     MAVEN_CONFIG="$USER_HOME_DIR/.m2" \
     MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3
