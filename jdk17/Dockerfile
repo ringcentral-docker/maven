@@ -1,7 +1,7 @@
 FROM ringcentral/jdk:17.0.3-alpine3.16.0
 LABEL maintainer="john.lin@ringcentral.com"
 
-ENV MAVEN_VERSION=3.8.2 \
+ENV MAVEN_VERSION=3.6.3 \
     MAVEN_HOME=/usr/share/maven \
     MAVEN_CONFIG="$USER_HOME_DIR/.m2" \
     MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3
