@@ -1,4 +1,4 @@
-FROM ringcentral/jdk:8u332-alpine3.16.0
+FROM ringcentral/jdk:8u332-alpine
 LABEL maintainer="john.lin@ringcentral.com"
 
 ENV MAVEN_VERSION=3.8.6 \
