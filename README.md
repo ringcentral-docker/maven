@@ -3,16 +3,16 @@
 
 ## Build Status
 
-Maven 3 base on Oracle JDK 8
+Maven 3 base on OpenJDK 8
 
 [![Build Maven base on JDK 8](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk8.yml/badge.svg)](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk8.yml)
 
-Maven 3 base on AdoptOpenJDK 11
+Maven 3 base on OpenJDK 11
 
 [![Build Maven base on JDK 11](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk11.yml/badge.svg)](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk11.yml)
 
 
-Maven 3 base on AdoptOpenJDK 17
+Maven 3 base on OpenJDK 17
 
 [![Build Maven base on JDK 17](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk17.yml/badge.svg)](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk17.yml)
 
