@@ -1,33 +1,6 @@
-
-# Maven
-
-## Build Status
-
-Maven 3 base on OpenJDK 8
-
-[![Build Maven base on JDK 8](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk8.yml/badge.svg)](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk8.yml)
-
-Maven 3 base on OpenJDK 11
-
-[![Build Maven base on JDK 11](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk11.yml/badge.svg)](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk11.yml)
-
-
-Maven 3 base on OpenJDK 17
-
-[![Build Maven base on JDK 17](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk17.yml/badge.svg)](https://github.com/ringcentral-docker/maven/actions/workflows/maven-base-on-jdk17.yml)
-
-## Image description
-
-* Base on the latest version of ringCentral/jdk Docker Image : [link](https://hub.docker.com/r/ringcentral/jdk/)
-
-## Get the Image
-
-```bash
-docker pull ringcentral/maven:latest
-```
-
-for more detail information please refer this url:
-
-<https://github.com/ringcentral-docker/maven>
-
-<https://hub.docker.com/r/ringcentral/maven>
+| JDK Version | Version | Docker Hub | GitHub Package |
+|-------------|---------|------------|----------------|
+| JDK11 | 3.9.9 | `ringcentral/maven:3.9.9` `ringcentral/maven:3.9.9-alpine` `ringcentral/maven:` `ringcentral/maven:-alpine` | `ghcr.io/ringcentral-docker/maven/maven:3.9.9` `ghcr.io/ringcentral-docker/maven/maven:3.9.9-alpine` `ghcr.io/ringcentral-docker/maven/maven:` `ghcr.io/ringcentral-docker/maven/maven:-alpine` |
+| JDK17 | 3.9.9 | `ringcentral/maven:3.9.9` `ringcentral/maven:3.9.9-alpine` `ringcentral/maven:` `ringcentral/maven:-alpine` | `ghcr.io/ringcentral-docker/maven/maven:3.9.9` `ghcr.io/ringcentral-docker/maven/maven:3.9.9-alpine` `ghcr.io/ringcentral-docker/maven/maven:` `ghcr.io/ringcentral-docker/maven/maven:-alpine` |
+| JDK21 | 3.9.9 | `ringcentral/maven:3.9.9` `ringcentral/maven:3.9.9-alpine` `ringcentral/maven:` `ringcentral/maven:-alpine` | `ghcr.io/ringcentral-docker/maven/maven:3.9.9` `ghcr.io/ringcentral-docker/maven/maven:3.9.9-alpine` `ghcr.io/ringcentral-docker/maven/maven:` `ghcr.io/ringcentral-docker/maven/maven:-alpine` |
+| JDK8 | 3.8.8 | `ringcentral/maven:3.8.8` `ringcentral/maven:3.8.8-alpine` `ringcentral/maven:` `ringcentral/maven:-alpine` | `ghcr.io/ringcentral-docker/maven/maven:3.8.8` `ghcr.io/ringcentral-docker/maven/maven:3.8.8-alpine` `ghcr.io/ringcentral-docker/maven/maven:` `ghcr.io/ringcentral-docker/maven/maven:-alpine` |
