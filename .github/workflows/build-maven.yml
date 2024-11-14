@@ -37,7 +37,12 @@ jobs:
           JAVA_VERSION="jdk$(awk -F '[:-]' '/FROM/ {print $2}' ${JDK_DIR}/Dockerfile)"
           BASE_VERSION="jdk$(awk -F '[:]' '/FROM/ {print $2}' ${JDK_DIR}/Dockerfile)"
           echo "${VERSION}" > ${JDK_DIR}/version.txt
-          echo "${VERSION}-${BASE_VERSION}" > ${JDK_DIR}/detail_version.txt
+          echo "${JAVA_VERSION}" > ${JDK_DIR}/java_version.txt
+          echo "${BASE_VERSION}" > ${JDK_DIR}/base_version.txt
+        else
+          VERSION=$(cat ${JDK_DIR}/version.txt)
+          JAVA_VERSION=$(cat ${JDK_DIR}/java_version.txt)
+          BASE_VERSION=$(cat ${JDK_DIR}/base_version.txt)
         fi
         echo "JDK_DIR=${JDK_DIR}" >> $GITHUB_ENV
         echo "VERSION=${VERSION}" >> $GITHUB_ENV
@@ -54,7 +59,6 @@ jobs:
         IMAGE_NAME=ringcentral/maven
         GH_DOCKER_PKG_IMAGE_NAME=ghcr.io/ringcentral-docker/maven/maven
 
-        docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:latest"
         docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}"
         docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}-${JAVA_VERSION}"
         docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}-${BASE_VERSION}"
@@ -62,7 +66,6 @@ jobs:
         docker push "${IMAGE_NAME}:${VERSION}-${BASE_VERSION}"
         docker push "${IMAGE_NAME}:${VERSION}-${JAVA_VERSION}"
         docker push "${IMAGE_NAME}:${VERSION}"
-        docker push "${IMAGE_NAME}:latest"
 
         docker tag "${IMAGE_NAME}" "${GH_DOCKER_PKG_IMAGE_NAME}:latest"
         docker tag "${IMAGE_NAME}" "${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}"
@@ -72,7 +75,6 @@ jobs:
         docker push "${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}-${BASE_VERSION}"
         docker push "${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}-${JAVA_VERSION}"
         docker push "${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}"
-        docker push "${GH_DOCKER_PKG_IMAGE_NAME}:latest"
 
         if [ "${{ matrix.jdk_version }}" -eq 21 ]; then
           docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:latest"
@@ -87,7 +89,7 @@ jobs:
         IMAGE_NAME=ringcentral/maven
         GH_DOCKER_PKG_IMAGE_NAME=ghcr.io/ringcentral-docker/maven/maven
 
-        NEW_ENTRY="| JDK${{ matrix.jdk_version }} | ${VERSION} | \`${IMAGE_NAME}:${VERSION}\` \`${IMAGE_NAME}:${VERSION}-${BASE_IMAGE}\` \`${IMAGE_NAME}:${DETAIL_VERSION}\` \`${IMAGE_NAME}:${DETAIL_VERSION}-${BASE_IMAGE}\` | \`${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}\` \`${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}-${BASE_IMAGE}\` \`${GH_DOCKER_PKG_IMAGE_NAME}:${DETAIL_VERSION}\` \`${GH_DOCKER_PKG_IMAGE_NAME}:${DETAIL_VERSION}-${BASE_IMAGE}\` |"
+        NEW_ENTRY="| JDK${{ matrix.jdk_version }} | ${VERSION} | \`${IMAGE_NAME}:${VERSION}\` \`${IMAGE_NAME}:${VERSION}-${JAVA_VERSION}\` \`${IMAGE_NAME}:${VERSION}-${BASE_VERSION}\`| \`${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}\` \`${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}-${JAVA_VERSION}\` \`${GH_DOCKER_PKG_IMAGE_NAME}:${VERSION}-${BASE_VERSION}\` |"
         echo "${NEW_ENTRY}" > readme_updates_${{ matrix.jdk_version }}.txt
 
     - name: Upload README Update
