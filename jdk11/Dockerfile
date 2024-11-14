@@ -1,4 +1,4 @@
-FROM registry.danbao.dev/ringcentral/jdk:11.0.25-alpine
+FROM ghcr.io/ringcentral-docker/jdk/jdk:11.0.25-alpine
 LABEL maintainer="john.lin@ringcentral.com"
 
 ENV MAVEN_VERSION=3.9.9 \
