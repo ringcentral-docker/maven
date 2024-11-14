@@ -1,4 +1,4 @@
-FROM ringcentral/jdk:17.0.13-alpine
+FROM registry.danbao.dev/ringcentral/jdk:17.0.13-alpine
 LABEL maintainer="john.lin@ringcentral.com"
 
 ENV MAVEN_VERSION=3.9.9 \
