@@ -18,7 +18,7 @@ RUN apk update \
     && apk del build-dependencies \
     && rm -rf /tmp/*
 
-COPY settings.xml /usr/share/maven/conf/settings.xml
+COPY conf/settings.xml /usr/share/maven/conf/settings.xml
 
 #==============
 # Show version
