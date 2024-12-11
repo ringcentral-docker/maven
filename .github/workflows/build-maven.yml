@@ -34,7 +34,7 @@ jobs:
         JDK_DIR=jdk${{ matrix.jdk_version }}
         if [[ -f ${JDK_DIR}/Dockerfile ]]; then
           VERSION="$(awk -F= '/MAVEN_VERSION=/ {print $2}' ${JDK_DIR}/Dockerfile | cut -d " " -f 1)"
-          JAVA_VERSION="jdk$(awk -F '[:-]' '/FROM/ {print $2}' ${JDK_DIR}/Dockerfile)"
+          JAVA_VERSION="jdk$(awk -F '[:-]' '/FROM/ {print $3}' ${JDK_DIR}/Dockerfile)"
           BASE_VERSION="jdk$(awk -F '[:]' '/FROM/ {print $2}' ${JDK_DIR}/Dockerfile)"
           echo "${VERSION}" > ${JDK_DIR}/version.txt
           echo "${JAVA_VERSION}" > ${JDK_DIR}/java_version.txt
