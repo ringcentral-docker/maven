@@ -145,10 +145,10 @@ under the License.
    |-->
   <mirrors>
     <mirror>
-    	<id>xmn02-i01-nex01</id>
+    	<id>dins-public</id>
     	<mirrorOf>dins-public</mirrorOf>
-    	<name>xmn02-i01-nex01</name>
-    	<url>http://xmn02-i01-nex01.lab.nordigy.ru:8888/nexus/content/groups/public/</url>
+    	<name>Dins Corporate Repository</name>
+    	<url>https://nexus.int.rclabenv.com/nexus/content/groups/public/</url>
   	</mirror>
 </mirrors>
   <!-- profiles
