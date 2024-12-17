@@ -143,16 +143,14 @@ under the License.
    | repository, to be used as an alternate download site. The mirror site will be the preferred
    | server for that repository.
    |-->
-  <!-- 
   <mirrors>
-    <mirror>  
-      <id>alimaven</id>  
-      <name>aliyun maven</name>  
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>  
-      <mirrorOf>central</mirrorOf>          
-    </mirror>
+    <mirror>
+    	<id>xmn02-i01-nex01</id>
+    	<mirrorOf>dins-public</mirrorOf>
+    	<name>xmn02-i01-nex01</name>
+    	<url>http://xmn02-i01-nex01.lab.nordigy.ru:8888/nexus/content/groups/public/</url>
+  	</mirror>
 </mirrors>
-    -->
   <!-- profiles
    | This is a list of profiles which can be activated in a variety of ways, and which can modify
    | the build process. Profiles provided in the settings.xml are intended to provide local machine-
