@@ -52,7 +52,7 @@ jobs:
     - name: Build Docker Image
       run: |
         IMAGE_NAME=ringcentral/maven
-        docker build --tag ${IMAGE_NAME} --file ${JDK_DIR}/Dockerfile .
+        docker build --no-cache --tag ${IMAGE_NAME} --file ${JDK_DIR}/Dockerfile .
 
     - name: Tag and Push Docker Images
       run: |
