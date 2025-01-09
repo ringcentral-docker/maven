@@ -1,4 +1,4 @@
-FROM ghcr.io/ringcentral-docker/jdk/jdk:17.0.11-alpine
+FROM ghcr.io/ringcentral-docker/jdk/jdk:17.0.13-alpine
 LABEL maintainer="john.lin@ringcentral.com"
 
 ENV MAVEN_VERSION=3.9.9 \
