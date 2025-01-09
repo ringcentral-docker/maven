@@ -85,7 +85,7 @@ jobs:
 
     - name: Generate README Update
       run: |
-        BASE_IMAGE="alpine"
+        BASE_IMAGE="noble"
         IMAGE_NAME=ringcentral/maven
         GH_DOCKER_PKG_IMAGE_NAME=ghcr.io/ringcentral-docker/maven/maven
 

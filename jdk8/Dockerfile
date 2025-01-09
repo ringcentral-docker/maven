@@ -1,4 +1,4 @@
-FROM ghcr.io/ringcentral-docker/jdk/jdk:8u432-alpine
+FROM ghcr.io/ringcentral-docker/jdk/jdk:8u432-noble
 LABEL maintainer="john.lin@ringcentral.com"
 
 ENV MAVEN_VERSION=3.8.8 \
@@ -8,15 +8,15 @@ ENV MAVEN_VERSION=3.8.8 \
 #==============
 # Install and Setting Maven
 #==============
-RUN apk update \
-    && apk add --no-cache --virtual=build-dependencies wget \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends wget \
     && cd /tmp \
     && mkdir -p /usr/share/maven \
     && wget "${MAVEN_BASE_URL}/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" 2>/dev/null \
     && tar -xzf "apache-maven-${MAVEN_VERSION}-bin.tar.gz" -C /usr/share/maven --strip-components=1 \
     && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
-    && apk del build-dependencies \
-    && rm -rf /tmp/*
+    && apt-get purge -y --auto-remove wget \
+    && rm -rf /var/lib/apt/lists/* /tmp/*
 
 COPY conf/settings.xml /usr/share/maven/conf/settings.xml
 
