@@ -10,11 +10,12 @@ FROM ghcr.io/ringcentral-docker/jdk:${JDK_TAG}
 LABEL maintainer="john.lin@ringcentral.com"
 
 ARG MAVEN_VERSION=3.9.12
+# Use archive.apache.org for old versions, downloads.apache.org for current
+ARG MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3
 
 ENV MAVEN_VERSION=${MAVEN_VERSION} \
     MAVEN_HOME=/usr/share/maven \
-    MAVEN_CONFIG="$USER_HOME_DIR/.m2" \
-    MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3
+    MAVEN_CONFIG="$USER_HOME_DIR/.m2"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends wget \

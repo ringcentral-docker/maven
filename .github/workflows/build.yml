@@ -100,6 +100,7 @@ jobs:
           build-args: |
             JDK_TAG=${{ matrix.jdk_tag }}
             MAVEN_VERSION=${{ matrix.maven_version }}
+            MAVEN_BASE_URL=${{ matrix.maven_base_url }}
           cache-from: type=gha,scope=${{ matrix.name }}
           cache-to: type=gha,mode=max,scope=${{ matrix.name }}
 
