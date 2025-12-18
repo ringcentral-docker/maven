@@ -1,0 +1,47 @@
+{
+  "versions": [
+    {
+      "name": "maven-jdk8",
+      "jdk_version": "8",
+      "jdk_tag": "8u472-noble",
+      "maven_version": "3.8.8",
+      "is_latest": false
+    },
+    {
+      "name": "maven-jdk11",
+      "jdk_version": "11",
+      "jdk_tag": "11.0.29-noble",
+      "maven_version": "3.9.12",
+      "is_latest": false
+    },
+    {
+      "name": "maven-jdk17",
+      "jdk_version": "17",
+      "jdk_tag": "17.0.17-noble",
+      "maven_version": "3.9.12",
+      "is_latest": false
+    },
+    {
+      "name": "maven-jdk21",
+      "jdk_version": "21",
+      "jdk_tag": "21.0.9-noble",
+      "maven_version": "3.9.12",
+      "is_latest": true
+    },
+    {
+      "name": "maven-jdk25",
+      "jdk_version": "25",
+      "jdk_tag": "25.0.1-noble",
+      "maven_version": "3.9.12",
+      "is_latest": false
+    }
+  ],
+  "common": {
+    "base_os": "noble",
+    "registry": {
+      "docker_hub": "ringcentral/maven",
+      "ghcr": "ghcr.io/ringcentral-docker/maven"
+    },
+    "platforms": ["linux/amd64", "linux/arm64"]
+  }
+}
