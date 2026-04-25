@@ -160,17 +160,17 @@ jobs:
           ## Usage
 
           ```bash
-          docker pull ringcentral/maven:3.9.12-jdk21
-          docker run -it ringcentral/maven:3.9.12-jdk21 mvn -version
+          docker pull ringcentral/maven:3.9.15-jdk21
+          docker run -it ringcentral/maven:3.9.15-jdk21 mvn -version
           ```
 
           ## Build Locally
 
           ```bash
           docker build \
-            --build-arg JDK_TAG=21.0.9-noble \
-            --build-arg MAVEN_VERSION=3.9.12 \
-            -t my-maven:3.9.12-jdk21 .
+            --build-arg JDK_TAG=21.0.10-noble \
+            --build-arg MAVEN_VERSION=3.9.15 \
+            -t my-maven:3.9.15-jdk21 .
           ```
 
           ## License
