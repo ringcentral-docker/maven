@@ -1,9 +1,9 @@
 # Parameterized Maven Dockerfile
 #
 # Build example:
-#   docker build --build-arg JDK_TAG=21.0.10-noble --build-arg MAVEN_VERSION=3.9.15 .
+#   docker build --build-arg JDK_TAG=21.0.12.1-noble --build-arg MAVEN_VERSION=3.9.15 .
 
-ARG JDK_TAG=21.0.10-noble
+ARG JDK_TAG=21.0.12.1-noble
 
 FROM ghcr.io/ringcentral-docker/jdk:${JDK_TAG}
 

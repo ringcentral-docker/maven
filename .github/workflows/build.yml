@@ -99,6 +99,7 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
+          pull: true
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
@@ -168,7 +169,7 @@ jobs:
 
           ```bash
           docker build \
-            --build-arg JDK_TAG=21.0.10-noble \
+            --build-arg JDK_TAG=21.0.12.1-noble \
             --build-arg MAVEN_VERSION=3.9.15 \
             -t my-maven:3.9.15-jdk21 .
           ```
