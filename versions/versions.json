@@ -13,7 +13,7 @@
       "jdk_version": "11",
       "jdk_tag": "11.0.32.1-noble",
       "maven_version": "3.9.15",
-      "maven_base_url": "https://downloads.apache.org/maven/maven-3",
+      "maven_base_url": "https://archive.apache.org/dist/maven/maven-3",
       "is_latest": false
     },
     {
@@ -21,7 +21,7 @@
       "jdk_version": "17",
       "jdk_tag": "17.0.20.1-noble",
       "maven_version": "3.9.15",
-      "maven_base_url": "https://downloads.apache.org/maven/maven-3",
+      "maven_base_url": "https://archive.apache.org/dist/maven/maven-3",
       "is_latest": false
     },
     {
@@ -29,7 +29,7 @@
       "jdk_version": "21",
       "jdk_tag": "21.0.12.1-noble",
       "maven_version": "3.9.15",
-      "maven_base_url": "https://downloads.apache.org/maven/maven-3",
+      "maven_base_url": "https://archive.apache.org/dist/maven/maven-3",
       "is_latest": true
     },
     {
@@ -37,7 +37,7 @@
       "jdk_version": "25",
       "jdk_tag": "25.0.4.1-noble",
       "maven_version": "3.9.15",
-      "maven_base_url": "https://downloads.apache.org/maven/maven-3",
+      "maven_base_url": "https://archive.apache.org/dist/maven/maven-3",
       "is_latest": false
     }
   ],

@@ -10,8 +10,8 @@ FROM ghcr.io/ringcentral-docker/jdk:${JDK_TAG}
 LABEL maintainer="john.lin@ringcentral.com"
 
 ARG MAVEN_VERSION=3.9.15
-# Use archive.apache.org for old versions, downloads.apache.org for current
-ARG MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3
+# Use the permanent Apache archive for pinned releases
+ARG MAVEN_BASE_URL=https://archive.apache.org/dist/maven/maven-3
 
 ENV MAVEN_VERSION=${MAVEN_VERSION} \
     MAVEN_HOME=/usr/share/maven \
